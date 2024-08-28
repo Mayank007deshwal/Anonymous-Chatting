@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getMessaging } from "firebase/messaging";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyALeqHjXlSLnVKpjfkFRapIGRfULCrWKNI",
+  apiKey: VITE_FIREBASE_API_KEY,
   authDomain: "test-pro-007.firebaseapp.com",
   projectId: "test-pro-007",
   storageBucket: "test-pro-007.appspot.com",
-  messagingSenderId: "693063552573",
-  appId: "1:693063552573:web:9b2451f07dce4015a22454",
-  measurementId: "G-PS7VNS17XJ",
+  messagingSenderId: VITE_MESSAGING_SENDER_ID,
+  appId: VITE_APP_ID,
+  measurementId: MEASUREMENT_ID,
 };
 
 // Initialize Firebase
