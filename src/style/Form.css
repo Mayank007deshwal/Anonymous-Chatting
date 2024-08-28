@@ -1,0 +1,104 @@
+/* .parent-container {
+  display: flex;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  border: 5px solid black;
+  height: 50%;
+  width: 50%;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.form-content {
+  margin: 7px;
+}
+
+label {
+  font-size: larger;
+  font-weight: 700;
+}
+
+input {
+  margin-bottom: 30px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+} */
+
+/* Make the parent container flexible and centered */
+.parent-container {
+  display: flex;
+  height: 100vh;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Using rgba for better opacity control */
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Add padding to avoid content touching the edges */
+}
+
+/* Adjust form container width and height for responsiveness */
+.form-container {
+  border: 5px solid black;
+  width: 90%; /* Make width a percentage for responsiveness */
+  max-width: 600px; /* Add a max-width to prevent it from getting too large */
+  border-radius: 5px;
+  background-color: lightgray;
+  padding: 20px; /* Add padding inside the form container */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Ensure form content is flexible */
+.form-content {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  gap: 20px; /* Space between form elements */
+}
+
+/* Ensure labels and inputs are styled properly */
+label {
+  font-size: 1.2rem; /* Use rem for relative font size */
+  font-weight: 700;
+}
+
+input {
+  width: 100%; /* Ensure inputs fill the width of their container */
+  padding: 8px; /* Add padding inside inputs for better usability */
+  box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.button-class {
+  display: block;
+  width: 100%; /* Ensure button fills its container width */
+  padding: 10px;
+  font-size: 1rem; /* Adjust font size for better readability */
+}
+
+/* Use media queries to adjust styles for smaller screens */
+@media (max-width: 768px) {
+  .form-container {
+    width: 95%; /* Adjust width for smaller screens */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .form-content {
+    gap: 15px; /* Adjust space between form elements */
+  }
+
+  input {
+    margin-bottom: 15px; /* Adjust margin for smaller screens */
+  }
+
+  .ml-10 {
+    margin-left: 5px; /* Reduce margin for smaller screens */
+  }
+}

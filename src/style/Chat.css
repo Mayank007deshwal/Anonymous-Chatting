@@ -1,0 +1,47 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.chat-header {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.message-list {
+  flex: 1;
+  padding: 10px;
+  overflow-y: scroll; /* Allows scrolling if messages exceed container height */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; /* Ensure messages stack vertically */
+}
+
+.message-bubble {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 60%;
+  display: inline-block;
+  word-break: break-word; /* Ensure long words break correctly */
+}
+
+.message-bubble.user {
+  background-color: #0084ff;
+  color: #fff;
+  align-self: flex-end; /* Align to the right */
+}
+
+.message-bubble.recipient {
+  background-color: #e5e5ea;
+  color: #000;
+  align-self: flex-start; /* Align to the left */
+}

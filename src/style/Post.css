@@ -1,0 +1,7 @@
+.truncate {
+  display: block;
+  width: 100%; /* or a specific width */
+  white-space: nowrap; /* Ensures text doesn't wrap to a new line */
+  overflow: hidden; /* Hides overflow text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the truncated text */
+}
