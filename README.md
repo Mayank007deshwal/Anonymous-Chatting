@@ -13,3 +13,4 @@ Currently, two official plugins are available:
 
 # commit just to redeploy
 - change environment variable for websocket
+- added wesocket secure
