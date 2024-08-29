@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Form from "./pages/Form";
-import { messaging } from "./firebase.js";
-import { getToken, onMessage } from "firebase/messaging";
+// import { messaging } from "./firebase.js";
+// import { getToken, onMessage } from "firebase/messaging";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PostRoom from "./pages/PostRoom.jsx";
@@ -11,9 +11,6 @@ import Layout from "./components/Layout.jsx";
 import Chat from "./pages/Chat.jsx";
 import LoginForm from "./pages/LoginForm.jsx";
 import AnonymousChat from "./pages/AnonymousChat.jsx";
-// import dotenv from "dotenv";
-// dotenv.config();
-// import { requestNotificationPermission } from "./requestNotificationPermission";
 
 function App() {
   // async function requestPermission() {
@@ -35,19 +32,17 @@ function App() {
 
   useEffect(() => {
     // requestPermission();  //Need UPdate to implement notification //devise_token need to be saved on database
-    const handleForegroundNotification = () => {
-      onMessage(messaging, (payload) => {
-        console.log("Message received. ", payload);
-        // Customize notification
-        const { title, body } = payload.notification;
-
-        if (Notification.permission === "granted") {
-          toast(title);
-        }
-      });
-    };
-
-    handleForegroundNotification();
+    // const handleForegroundNotification = () => {
+    //   onMessage(messaging, (payload) => {
+    //     console.log("Message received. ", payload);
+    //     // Customize notification
+    //     const { title, body } = payload.notification;
+    //     if (Notification.permission === "granted") {
+    //       toast(title);
+    //     }
+    //   });
+    // };
+    // handleForegroundNotification();
   }, []);
 
   return (
