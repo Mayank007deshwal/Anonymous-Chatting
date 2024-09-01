@@ -23,6 +23,7 @@ function App() {
         const token = await getToken(messaging, {
           vapidKey: import.meta.env.VITE_FIREBASE_VAPID_KEY,
         });
+        console.log("token:", token);
 
         userDeviseId(token);
       }
@@ -32,6 +33,7 @@ function App() {
   }
 
   const userDeviseId = async (token) => {
+    console.log("devise id backend API called");
     try {
       const response = await fetch(
         "http://127.0.0.1:3000/users/add_device_token",
