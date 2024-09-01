@@ -67,8 +67,7 @@ const Sidebar = () => {
       });
 
       if (response.ok) {
-        // const responseData = await response.json(); // Parse the response JSON
-        localStorage.removeItem("user"); // Store user data in local storage
+        localStorage.clear();
         setUsers([]); // Update user state
         setUser(null);
         navigate("/");

@@ -34,13 +34,11 @@ const Form = () => {
       });
 
       if (response.status === 201) {
-        localStorage.setItem("user", JSON.stringify(await response.json()));
-        setUser(await response.json());
+        const data = await response.json();
+        localStorage.setItem("user", JSON.stringify(data));
+        setUser(data);
         navigate("/");
       }
-      console.log("status:", response.status);
-
-      console.log("response", await response.json());
     } catch (error) {
       console.error("Error updating post:", error);
     }

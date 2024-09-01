@@ -132,7 +132,7 @@ const Chat = () => {
     return () => {
       subscription.unsubscribe();
     };
-  }, [conversationId]);
+  }, [conversationId, receipient_id]);
 
   return (
     <div className="chat-container">
