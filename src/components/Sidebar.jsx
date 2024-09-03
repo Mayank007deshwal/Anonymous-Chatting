@@ -44,9 +44,12 @@ const Sidebar = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:3000/users", {
-        credentials: "include", // Ensure cookies are sent
-      }); // Adjust the URL as needed
+      const response = await fetch(
+        `${import.meta.env.VITE_WEBSOCKET_URL}/users`,
+        {
+          credentials: "include", // Ensure cookies are sent
+        }
+      ); // Adjust the URL as needed
       if (!response.ok) {
         throw new Error("Network response was not ok.");
       }
@@ -61,10 +64,13 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:3000/logout", {
-        method: "POST",
-        credentials: "include",
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_WEBSOCKET_URL}/logout`,
+        {
+          method: "POST",
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         localStorage.clear();

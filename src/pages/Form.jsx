@@ -24,14 +24,17 @@ const Form = () => {
   const handleSubmit = async () => {
     const dataToSend = { user: formData };
     try {
-      const response = await fetch(`http://127.0.0.1:3000/signup`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dataToSend),
-        credentials: "include",
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_WEBSOCKET_URL}/signup`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+          credentials: "include",
+        }
+      );
 
       if (response.status === 201) {
         const data = await response.json();

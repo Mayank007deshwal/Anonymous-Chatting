@@ -36,7 +36,7 @@ function App() {
     console.log("devise id backend API called");
     try {
       const response = await fetch(
-        "http://127.0.0.1:3000/users/add_device_token",
+        `${import.meta.env.VITE_WEBSOCKET_URL}/users/add_device_token`,
         {
           method: "POST",
           credentials: "include",

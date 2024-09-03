@@ -46,19 +46,22 @@ const Chat = () => {
     // Ensure the newMessage is not just whitespace
     if (newMessage.trim()) {
       try {
-        const response = await fetch("http://127.0.0.1:3000/chats", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify({
-            chat: {
-              content: newMessage.trim(),
+        const response = await fetch(
+          `${import.meta.env.VITE_WEBSOCKET_URL}/chats`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
             },
-            recipient_id: receipient_id,
-          }),
-        });
+            credentials: "include",
+            body: JSON.stringify({
+              chat: {
+                content: newMessage.trim(),
+              },
+              recipient_id: receipient_id,
+            }),
+          }
+        );
 
         if (!response.ok) {
           // Handle non-200 HTTP responses
@@ -89,7 +92,9 @@ const Chat = () => {
   const fetchMessages = async () => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:3000/chats?receipient_id=${receipient_id}`,
+        `${
+          import.meta.env.VITE_WEBSOCKET_URL
+        }/chats?receipient_id=${receipient_id}`,
         {
           credentials: "include",
         }
