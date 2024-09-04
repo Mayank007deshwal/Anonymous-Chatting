@@ -47,7 +47,7 @@ const Chat = () => {
     if (newMessage.trim()) {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_WEBSOCKET_URL}/chats`,
+          `${import.meta.env.VITE_BACKEND_SERVER_URL}/chats`,
           {
             method: "POST",
             headers: {
@@ -93,7 +93,7 @@ const Chat = () => {
     try {
       const response = await fetch(
         `${
-          import.meta.env.VITE_WEBSOCKET_URL
+          import.meta.env.VITE_BACKEND_SERVER_URL
         }/chats?receipient_id=${receipient_id}`,
         {
           credentials: "include",
