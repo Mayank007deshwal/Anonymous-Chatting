@@ -25,7 +25,7 @@ const Form = () => {
     const dataToSend = { user: formData };
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_WEBSOCKET_URL}/signup`,
+        `${import.meta.env.VITE_BACKEND_SERVER_URL}/signup`,
         {
           method: "POST",
           headers: {
