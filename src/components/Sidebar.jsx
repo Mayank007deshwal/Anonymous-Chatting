@@ -45,7 +45,7 @@ const Sidebar = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_WEBSOCKET_URL}/users`,
+        `${import.meta.env.VITE_BACKEND_SERVER_URL}/users`,
         {
           credentials: "include", // Ensure cookies are sent
         }
@@ -65,7 +65,7 @@ const Sidebar = () => {
   const handleLogout = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_WEBSOCKET_URL}/logout`,
+        `${import.meta.env.VITE_BACKEND_SERVER_URL}/logout`,
         {
           method: "POST",
           credentials: "include",
